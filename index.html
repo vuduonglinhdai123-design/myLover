@@ -12,12 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="icon" href="img/storyDate_heart.png" type="image/x-icon">
+    <link rel="icon" class="title" href="img/e65959.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body class="w3-animate-opacity">
+<body class="w3-animate-opacity ">
     <!-- <iframe src="/audio/mySong.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
 
     <!-- HEADER -->
@@ -43,6 +45,14 @@
                         <a class="nav-item nav-link" href="#ourDay">Our Day</a>
                         <a class="nav-item nav-link" href="#ourStory">Our Story</a>
                         <a class="nav-item nav-link" href="#gallery">Gallery</a>
+                        <div class="dropdown-container">
+                            <a class="nav-item nav-link gamingBtn" href="#gaming">Gaming</a>
+                            <div class="dropdown-item">
+                                <a href="#game-info" class="dropdown-nav-link" id="item-1">Game Info</a>
+                                <a href="#game-gallery" class="dropdown-nav-link" id="item-2">Game Gallery</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -51,13 +61,28 @@
 
     <section class="home-section"></section>
 
+    <!-- CHANGE COLOR -->
+    <span href="" id="lm_demo_panel_switcher" class="lm-demo-panel-switcher left"><i class="fas fa-cog"></i></span>
+
+    <div class="lm-demo-panel left " id="lm_demo_panel">
+        <div class="demo-panel-title">Main Color</div>
+        <option class="colorElements" value="#ff8578" style="background-color: #ff8578;"></option>
+        <option class="colorElements" value="#e65959" style="background-color: #e65959;"></option>
+        <option class="colorElements" value="#34c7a9" style="background-color: #34c7a9;"></option>
+        <option class="colorElements" value="#a878ff" style="background-color: #a878ff;"></option>
+        <option class="colorElements" value="#f9966f" style="background-color: #f9966f;"></option>
+    </div>
+
+    <!-- ABOUT US BLOCKS -->
     <div class="container-fluid about-us-container">
         <div class="about-us-block block-left">
             <div class="main-block">
                 <div class="name">
                     <h2 class="main-color">Linh Đài</h2>
                     <span class="birthday">16/11/2004</span>
-                    <div class="zodiac"></div>
+                    <div class="zodiac">
+                        <img src="/img/scorpio.jfif" alt="">
+                    </div>
                 </div>
                 <div class="photo"><img src="/img/mySelf.jpg" alt=""></div>
             </div>
@@ -73,7 +98,9 @@
                 <div class="name">
                     <h2 class="main-color">Thu Hà</h2>
                     <span class="birthday">3/10/2004</span>
-                    <div class="zodiac"></div>
+                    <div class="zodiac">
+                        <img src="/img/libra.jpg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,18 +129,22 @@
                     <div class="count-label">Second</div>
                 </div>
             </div>
-            <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id tellus pretium quam sodales luctus. Nunc
-                nec lacus ac arcu iaculis accumsan dictum a nulla. Nullam malesuada pellentesque turpis, eu elementum
-                risus sagittis in. Nunc sit amet arcu justo.
-            </p>
+
+            <div class="description-container">
+                <p class="description">
+                    “Love is not about how many days, weeks or months we’ve been together, it’s all about how much we
+                    love
+                    each other every day.”
+                </p>
+                <h3 class="author">-Top 1 Murad-</h3>
+            </div>
         </div>
 
         <!-- OUR STORY -->
         <div class="container" id="ourStory">
             <h2>Our Story</h2>
 
-            <!-- Story Row 1 -->
+            <!-- Story Row 1 (touch cheek)-->
             <div class="story-row row">
                 <div class="col-sm-12 col-md-5 story-block text-center">
                     <div class="story-image scale-image-effect">
@@ -124,36 +155,45 @@
                 <div class="col-sm-12 col-md-2 story-block text-center">
                     <div class="story-date">
                         <div class="year">2020</div>
-                        <div class="month">Nov</div>
+                        <div class="month">3/10</div>
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-5 story-block text-center">
-                    <h3>Morbi dapibus enim mollis</h3>
-                    <p>Maecenas vestibulum volutpat nisl. Nulla faucibus, quam eget auctor vulputate, elit ante commodo
-                        erat, et pretium purus massa et nunc. Duis vitae nisl eget metus gravida maximus non mattis
-                        nunc. Etiam posuere sodales mollis. Donec viverra egestas lorem, at varius sem congue quis.
-                    </p>
+                    <h3 class="text-center">First time touching cheek :>>>>>>>>></h3>
+                    <p class="text-center">Click the envelope to read interesting storyyy😘😘</p>
+                    <i class="fas fa-envelope letter-icon"></i>
                 </div>
-
                 <div class="vertical-line"></div>
+
+
+
+
+                <!-- The Modal -->
+                <div class="love-modal">
+                    <!-- The Close Button -->
+                    <span class="close-love-modal">&times;</span>
+
+                    <div class="love-modal-content">
+                    </div>
+                </div>
             </div>
 
 
-            <!-- Story Row 2 -->
+
+
+            <!-- Story Row 2 (KFC)-->
             <div class="story-row row">
                 <div class="col-sm-12 col-md-5 story-block text-center">
-                    <h3>Morbi dapibus enim mollis</h3>
-                    <p>Maecenas vestibulum volutpat nisl. Nulla faucibus, quam eget auctor vulputate, elit ante commodo
-                        erat, et pretium purus massa et nunc. Duis vitae nisl eget metus gravida maximus non mattis
-                        nunc. Etiam posuere sodales mollis. Donec viverra egestas lorem, at varius sem congue quis.
-                    </p>
+                    <h3 class="text-center">First "date" at the KCF ~~~~~~</h3>
+                    <p class="text-center">Click the envelope to read interesting storyyy😘😘</p>
+                    <i class="fas fa-envelope letter-icon"></i>
                 </div>
 
                 <div class="col-sm-12 col-md-2 story-block text-center">
                     <div class="story-date">
                         <div class="year">2020</div>
-                        <div class="month">Nov</div>
+                        <div class="month">Oct</div>
                     </div>
                 </div>
 
@@ -164,9 +204,23 @@
                 </div>
 
                 <div class="vertical-line"></div>
+
+
+
+
+                <!-- The Modal -->
+                <div class="love-modal">
+                    <!-- The Close Button -->
+                    <span class="close-love-modal">&times;</span>
+
+                    <div class="love-modal-content">
+                    </div>
+                </div>
             </div>
 
-            <!-- Story Row 3 -->
+
+
+            <!-- Story Row 3 (Milk tea + Library)-->
             <div class="story-row row">
                 <div class="col-sm-12 col-md-5 story-block text-center">
                     <div class="story-image scale-image-effect">
@@ -177,35 +231,47 @@
                 <div class="col-sm-12 col-md-2 story-block text-center">
                     <div class="story-date">
                         <div class="year">2020</div>
-                        <div class="month">Nov</div>
+                        <div class="month">21/10</div>
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-5 story-block text-center">
-                    <h3>Morbi dapibus enim mollis</h3>
-                    <p>Maecenas vestibulum volutpat nisl. Nulla faucibus, quam eget auctor vulputate, elit ante commodo
-                        erat, et pretium purus massa et nunc. Duis vitae nisl eget metus gravida maximus non mattis
-                        nunc. Etiam posuere sodales mollis. Donec viverra egestas lorem, at varius sem congue quis.
-                    </p>
+                    <h3 class="text-center">First time go to the library :3333</h3>
+                    <p class="text-center">Click the envelope to read interesting storyyy😘😘</p>
+                    <i class="fas fa-envelope letter-icon"></i>
+
                 </div>
 
                 <div class="vertical-line"></div>
+
+
+
+
+                <!-- The Modal -->
+                <div class="love-modal">
+                    <!-- The Close Button -->
+                    <span class="close-love-modal">&times;</span>
+
+                    <div class="love-modal-content">
+                    </div>
+                </div>
             </div>
 
-            <!-- Story Row 4 -->
+
+
+            <!-- Story Row 4 (Fall in love)-->
             <div class="story-row row">
                 <div class="col-sm-12 col-md-5 story-block text-center">
-                    <h3>Morbi dapibus enim mollis</h3>
-                    <p>Maecenas vestibulum volutpat nisl. Nulla faucibus, quam eget auctor vulputate, elit ante commodo
-                        erat, et pretium purus massa et nunc. Duis vitae nisl eget metus gravida maximus non mattis
-                        nunc. Etiam posuere sodales mollis. Donec viverra egestas lorem, at varius sem congue quis.
-                    </p>
+                    <h3 class="text-center">💕💕💕💕💕</h3>
+                    <p class="text-center">Click the envelope to read interesting storyyy😘😘</p>
+                    <i class="fas fa-envelope letter-icon"></i>
+
                 </div>
 
                 <div class="col-sm-12 col-md-2 story-block text-center">
                     <div class="story-date">
                         <div class="year">2020</div>
-                        <div class="month">Nov</div>
+                        <div class="month">16/11</div>
                     </div>
                 </div>
 
@@ -216,7 +282,21 @@
                 </div>
 
                 <div class="vertical-line"></div>
+
+
+
+
+                <!-- The Modal -->
+                <div class="love-modal">
+                    <!-- The Close Button -->
+                    <span class="close-love-modal">&times;</span>
+
+                    <div class="love-modal-content">
+                    </div>
+                </div>
             </div>
+
+
         </div>
 
 
@@ -276,23 +356,160 @@
                 <button class="next">></button>
 
             </div>
+        </div>
+
+        <!-- GAME -->
+        <div class="container" id="gaming">
+            <h2 id="game-info">Gaming</h2>
+            <!-- INTRO -->
+            <div class="intro-container">
+                <div class="Dai_game_intro">
+                    <h2 class="intro_name">Dai Dz</h2>
+                    <img class="intro_img" src="/img/D_game_intro.jpg" alt="">
+                    <ul class="intro_info">
+                        <li>Top 1 Murad</li>
+                        <li>Trùm gánh team</li>
+                        <li>Cầm đầu tập đoàn Gáy</li>
+                        <li>Ny đẹp try cụa Cún</li>
+                        <li>"Hơi dễ, khó hơn đi" <br>"Toàn bò với nhau"</li>
+                    </ul>
+                </div>
+
+                <div class="vl"></div>
+
+                <div class="Ha_game_intro">
+                    <h2 class="intro_name">Ha Vip Pro</h2>
+                    <img class="intro_img" src="/img/H_game_intro.jpg" alt="">
+                    <ul class="intro_info">
+                        <li>Top 1 Liliana</li>
+                        <li>Trùm mõm</li>
+                        <li>Cụ tổ ăn vạ + gào thét</li>
+                        <li>Babi cute cụa Đài</li>
+                        <li>"Aaa cứu tao, nó bắt tao huhu!"<br>"sao mày ăn lắm mạng thế ?"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--GAME PHILOSOPHY -->
+            <div class="philo-container row">
+                <!-- D PHILO -->
+                <div class="col-sm-6 col-md-5 philo-block" id="D_philo_block">
+                    <img src="/img/D_shooting.jpg" alt="">
+                    <div class="philo-quote">
+                        <p>Gặp là tao múc, gặp là xúc</p>
+                        <h3>Đài ProMax</h3>
+                    </div>
+                </div>
+
+                <!-- H PHILO -->
+                <div class="col-sm-6 col-md-5 philo-block" id="H_philo_block">
+                    <img src="/img/H_shooting.jpg" alt="">
+                    <div class="philo-quote">
+                        <p>Tuyên bố bắn bome đứa nào tranh lane </p>
+                        <h3>Hè Cute</h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- GALLERY GAMING -->
+            <div class="container gallery-gaming" id="game-gallery">
+                <h2>Game Gallery</h2>
+                <div class="row gallery-grid">
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/streak20.jpg" class="myImg" alt="">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/amongUs.jpg" class="myImg" alt="">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/pubg.jpg" class="myImg" alt="">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/.jpg" class="myImg" alt="">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/.jpg" class="myImg" alt="">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/.jpg" class="myImg" alt="">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/.jpg" class="myImg" alt="">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/.jpg" class="myImg" alt="">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 gallery-item">
+                        <img src="/img/.jpg" class="myImg" alt="">
+                    </div>
+                </div>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- The Close Button -->
+                    <span class="close">&times;</span>
+
+                    <!-- Modal Content (The Image) -->
+                    <button class="previous"></button>
+                    <img class="modal-content" id="img01">
+                    <button class="next">></button>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- ADDING FEW WORDS -->
+        <div class="container" id="fewWords">
+            <button class="custom-btn btn-5" onclick="typeWriter()"><span>Click Me :))</span></button>
+            <p id="demo"></p>
+
+            <div class="click-message-container">
+                <p id="follow-message">Click Here</p>
+                <i class="fas fa-arrow-down arrow-down"></i>
+            </div>
+
+            <div class="final-heart-container">
+                <i class="fas fa-heart final-heart"></i>
+            </div>
+
+
+            <div class="final-modal">
+                <!-- The Close Button -->
+                <span class="final-close">&times;</span>
+
+                <div class="final-modal-content gradient-border">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quo facilis accusamus est,
+                        adipisci id placeat nam exercitationem hic ad repudiandae consequuntur dignissimos sunt cum quia
+                        dolorum ullam, alias quibusdam?
+                    </p>
+                </div>
+            </div>
+
 
         </div>
+
+
+
+        <!-- FOOTER -->
+        <!-- <footer class="sticky-bottom">
+
+            <div class="footer-image-block"></div>
+        </footer> -->
+
 
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-image-block">
-            <div class="footer-mask"></div>
-        </div>
-
-        <div class="footer-title">
-            <h2></h2>
-        </div>
-    </footer>
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -3,32 +3,71 @@ window.onload = start()
 var aTags = document.querySelectorAll('nav a')
 var nav = document.querySelector('.main-navbar')
 var header = document.querySelector('header')
+var dropdown_container = document.querySelector('.dropdown-item')
+var dropdown_items = document.querySelectorAll('.dropdown-item a')
+var gamingBtn = document.querySelector('.gamingBtn')
+
+
+function resolveAfter1Seconds() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('resolved');
+        }, 1000);
+    });
+}
 
 window.addEventListener('scroll', function () {
     nav.classList.toggle('sticky', window.scrollY > 0)
-    header.classList.toggle('changeHeaderBg', window.scrollY > 0)
+    header.classList.toggle('sticky-header', window.scrollY > 0)
+    dropdown_container.classList.toggle('active', window.scrollY > 0)
 })
 
-for (var i = 0; i < aTags.length; i++) {
-    aTags[i].onclick = function (e) {
-        e.stopPropagation()
+for (var j = 0; j < aTags.length; j++) {
+    aTags[j].onclick = function (e) {
+        // e.stopPropagation()
     }
+}
+
+document.querySelector('.lm-demo-panel-switcher').onmouseover = function () {
+    this.querySelector('i').classList.toggle('loading')
+}
+
+document.querySelector('.lm-demo-panel-switcher').onmouseout = function () {
+    this.querySelector('i').classList.remove('loading')
+}
+
+document.querySelector('.lm-demo-panel-switcher').onclick = function () {
+    document.querySelector('.lm-demo-panel').classList.toggle('active')
 }
 
 function start() {
     changeActiveBtns()
     zooming()
+    changeMainColor()
+    showTime();
+    showLoveMessage()
 }
 
 function changeActiveBtns() {
-    var changeFontSizeBtns = document.querySelectorAll('.main-navbar .nav-link')
-
+    var changeFontSizeBtns = document.querySelectorAll('.nav-link')
     for (var i = 0; i < changeFontSizeBtns.length; i++) {
         changeFontSizeBtns[i].addEventListener("click", function () {
             var current = document.getElementsByClassName("active");
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
         });
+    }
+}
+
+// Another changeActiveBtns for dropdown nav-links
+var dropdown_navLinks = document.querySelectorAll('.dropdown-nav-link')
+dropdown_container.onclick = function (e) {
+    for (var j = 0; j < dropdown_navLinks.length; j++) {
+        if (e.target === dropdown_navLinks[j]) {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            gamingBtn.className += " active";
+        }
     }
 }
 
@@ -80,7 +119,6 @@ function showTime() {
 
 }
 
-showTime();
 
 
 function zooming() {
@@ -89,16 +127,17 @@ function zooming() {
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     var img = document.querySelectorAll(".myImg");
+    var img = document.querySelectorAll(".myImg");
     var modalImg = document.getElementById("img01");
 
     for (var i = 0; i < img.length; i++) {
         img[i].setAttribute('id', `${i + 1}`)
-
         img[i].onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
             document.body.style.overflow = "hidden"; // ADD THIS LINE
             document.body.style.height = "100%"; // ADD THIS LINE
+
             var previousBtn = document.querySelector('.previous')
             var nextBtn = document.querySelector('.next')
 
@@ -166,4 +205,89 @@ function slideShow(id) {
 
 }
 
+function changeMainColor() {
+    var colorElements = document.querySelectorAll('option')
+    var root = document.documentElement;
+    var heartImgs = document.querySelectorAll('#ourStory .story-date')
 
+    root.style.setProperty('--main-color', localStorage.getItem('mainColor'));
+
+    for (var i = 0; i < heartImgs.length; i++) {
+        heartImgs[i].style.backgroundImage = `url(/img/${localStorage.getItem('heartColor')})`
+    }
+
+    for (var i = 0; i < colorElements.length; i++) {
+        colorElements[i].onclick = function () {
+            var heartImgUrl = this.value.substring(1) + '.png'
+
+            localStorage.setItem('heartColor', heartImgUrl)
+            localStorage.setItem('mainColor', this.value)
+
+
+            window.location.reload(true);
+        }
+    }
+}
+
+function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('resolved');
+        }, 2500);
+    });
+}
+
+
+var i = 0;
+var txt = "Before finishing this web, I want to say something to you";
+var speed = 30;
+
+async function typeWriter() {
+    if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+    await resolveAfter2Seconds();
+    document.querySelector('.click-message-container').style.display = 'flex'
+    await resolveAfter1Seconds()
+    document.querySelector('.final-heart').style.display = 'block'
+    showFinalMessage()
+}
+
+function showFinalMessage() {
+    var finalHeart = document.querySelector('.final-heart')
+    var modal = document.querySelector(".final-modal");
+
+    finalHeart.onclick = function () {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // ADD THIS LINE
+        document.body.style.height = "100%"; // ADD THIS LINE
+    }
+
+    var span = document.getElementsByClassName("final-close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // ADD THIS LINE
+        document.body.style.height = "auto"; // ADD THIS LINE
+    }
+}
+
+function showLoveMessage() {
+    var letter_icons = document.querySelectorAll('.letter-icon')
+    var closeBtn = document.querySelectorAll('.close-love-modal')
+    for (var i = 0; i < letter_icons.length; i++) {
+        letter_icons[i].onclick = function () {
+            this.parentElement.parentElement.querySelector('.love-modal').style.display = 'block'
+        }
+    }
+
+    for(var j = 0; j < closeBtn.length; j++) {
+        closeBtn[j].onclick = function() {
+            this.parentElement.style.display = 'none'
+        }
+    }
+
+}
