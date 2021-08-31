@@ -281,13 +281,24 @@ function showLoveMessage() {
     for (var i = 0; i < letter_icons.length; i++) {
         letter_icons[i].onclick = function () {
             this.parentElement.parentElement.querySelector('.love-modal').style.display = 'block'
+            document.body.style.overflow = "hidden"; // ADD THIS LINE
+            document.body.style.height = "100%"; // ADD THIS LINE
         }
     }
 
-    for(var j = 0; j < closeBtn.length; j++) {
-        closeBtn[j].onclick = function() {
+    for (var j = 0; j < closeBtn.length; j++) {
+        closeBtn[j].onclick = function () {
             this.parentElement.style.display = 'none'
+            document.body.style.overflow = "auto"; // ADD THIS LINE
+            document.body.style.height = "auto"; // ADD THIS LINE
         }
     }
 
 }
+
+
+// var loveCode = localStorage.getItem('loveCode')
+// if(loveCode == null ) {
+//     var loveCode = prompt('Enter the code')
+//     console.log(loveCode);
+// }
