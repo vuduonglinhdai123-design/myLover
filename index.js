@@ -1,4 +1,8 @@
-window.onload = start()
+window.onload = async function () {
+    setCode()
+    await resolveAfter1Seconds
+    start()
+}
 
 var aTags = document.querySelectorAll('nav a')
 var nav = document.querySelector('.main-navbar')
@@ -39,6 +43,17 @@ document.querySelector('.lm-demo-panel-switcher').onmouseout = function () {
 document.querySelector('.lm-demo-panel-switcher').onclick = function () {
     document.querySelector('.lm-demo-panel').classList.toggle('active')
 }
+
+function setCode() {
+    var loveCode = localStorage.getItem('loveCode')
+    if (loveCode == null) {
+        var loveCode = prompt('Enter the code, if do not know, just skip :D')
+        if (loveCode) {
+            localStorage.setItem('loveCode', loveCode)
+        }
+    }
+}
+
 
 function start() {
     changeActiveBtns()
@@ -119,8 +134,6 @@ function showTime() {
 
 }
 
-
-
 function zooming() {
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -135,8 +148,8 @@ function zooming() {
         img[i].onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
-            document.body.style.overflow = "hidden"; // ADD THIS LINE
-            document.body.style.height = "100%"; // ADD THIS LINE
+            document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
+            document.querySelector('html').style.height = "100%"; // ADD THIS LINE
 
             var previousBtn = document.querySelector('.previous')
             var nextBtn = document.querySelector('.next')
@@ -153,15 +166,15 @@ function zooming() {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
-        document.body.style.overflow = "auto"; // ADD THIS LINE
-        document.body.style.height = "auto"; // ADD THIS LINE
+        document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+        document.querySelector('html').style.height = "auto"; // ADD THIS LINE
     }
 
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
-            document.body.style.overflow = "auto"; // ADD THIS LINE
-            document.body.style.height = "auto";  // ADD THIS LINE
+            document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+            document.querySelector('html').style.height = "auto";  // ADD THIS LINE
         }
     }
 
@@ -261,8 +274,8 @@ function showFinalMessage() {
 
     finalHeart.onclick = function () {
         modal.style.display = "block";
-        document.body.style.overflow = "hidden"; // ADD THIS LINE
-        document.body.style.height = "100%"; // ADD THIS LINE
+        document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
+        document.querySelector('html').style.height = "100%"; // ADD THIS LINE
     }
 
     var span = document.getElementsByClassName("final-close")[0];
@@ -270,35 +283,39 @@ function showFinalMessage() {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
-        document.body.style.overflow = "auto"; // ADD THIS LINE
-        document.body.style.height = "auto"; // ADD THIS LINE
+        document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+        document.querySelector('html').style.height = "auto"; // ADD THIS LINE
     }
 }
 
 function showLoveMessage() {
+    var confirmCode = localStorage.getItem('loveCode')
     var letter_icons = document.querySelectorAll('.letter-icon')
     var closeBtn = document.querySelectorAll('.close-love-modal')
-    for (var i = 0; i < letter_icons.length; i++) {
-        letter_icons[i].onclick = function () {
-            this.parentElement.parentElement.querySelector('.love-modal').style.display = 'block'
-            document.body.style.overflow = "hidden"; // ADD THIS LINE
-            document.body.style.height = "100%"; // ADD THIS LINE
+    if (confirmCode === 'iloveu') {
+        for (var i = 0; i < letter_icons.length; i++) {
+            letter_icons[i].onclick = function () {
+                this.parentElement.parentElement.querySelector('.love-modal').style.display = 'block'
+                document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
+                document.querySelector('html').style.height = "100%"; // ADD THIS LINE
+            }
+        }
+
+        for (var j = 0; j < closeBtn.length; j++) {
+            closeBtn[j].onclick = function () {
+                this.parentElement.style.display = 'none'
+                document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+                document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+            }
         }
     }
-
-    for (var j = 0; j < closeBtn.length; j++) {
-        closeBtn[j].onclick = function () {
-            this.parentElement.style.display = 'none'
-            document.body.style.overflow = "auto"; // ADD THIS LINE
-            document.body.style.height = "auto"; // ADD THIS LINE
+    else {
+        for (var i = 0; i < letter_icons.length; i++) {
+            letter_icons[i].onclick = ''
         }
     }
 
 }
 
 
-// var loveCode = localStorage.getItem('loveCode')
-// if(loveCode == null ) {
-//     var loveCode = prompt('Enter the code')
-//     console.log(loveCode);
-// }
+
