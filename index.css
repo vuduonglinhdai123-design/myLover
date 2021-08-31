@@ -148,7 +148,7 @@ header {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url(/img/headerImg.jpg);
+    background-image: url(./img/headerImg.jpg);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -649,7 +649,7 @@ span.lm-demo-panel-switcher i {
 .lm-demo-panel .demo-panel-title {
     font-size: 16px;
     text-align: center;
-    color: inherit;
+    color: black;
     margin-bottom: 12px;
 }
 
