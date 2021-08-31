@@ -80,6 +80,10 @@ header {
     transition: 0.3s;
 }
 
+.navbar-collapse {
+    position: relative;
+}
+
 .nav-link {
     color: darkred;
     font-weight: 600;
@@ -142,6 +146,23 @@ header {
 
 .gamingBtn:hover~.dropdown-item {
     display: flex;
+}
+
+.changeCode-btn {
+    position: absolute;
+    right: 100px;
+    padding: .5rem 1rem;
+    font-weight: 600;
+}
+
+.changeCode-btn i {
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.changeCode-btn i:hover {
+    color: darkred;
 }
 
 .home-section {
@@ -553,6 +574,11 @@ header {
     transition: 0.3s;
     background: none;
     cursor: pointer;
+}
+
+button {
+    background: none;
+    border: none;
 }
 
 button:focus {

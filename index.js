@@ -1,8 +1,4 @@
-window.onload = async function () {
-    setCode()
-    await resolveAfter1Seconds
-    start()
-}
+window.onload = start()
 
 var aTags = document.querySelectorAll('nav a')
 var nav = document.querySelector('.main-navbar')
@@ -44,18 +40,8 @@ document.querySelector('.lm-demo-panel-switcher').onclick = function () {
     document.querySelector('.lm-demo-panel').classList.toggle('active')
 }
 
-function setCode() {
-    var loveCode = localStorage.getItem('loveCode')
-    if (loveCode == null) {
-        var loveCode = prompt('Enter the code, if do not know, just skip :D')
-        if (loveCode) {
-            localStorage.setItem('loveCode', loveCode)
-        }
-    }
-}
-
-
 function start() {
+    setCode()
     changeActiveBtns()
     zooming()
     changeMainColor()
@@ -290,6 +276,7 @@ function showFinalMessage() {
 
 function showLoveMessage() {
     var confirmCode = localStorage.getItem('loveCode')
+    console.log(confirmCode);
     var letter_icons = document.querySelectorAll('.letter-icon')
     var closeBtn = document.querySelectorAll('.close-love-modal')
     if (confirmCode === 'iloveu') {
@@ -317,5 +304,13 @@ function showLoveMessage() {
 
 }
 
-
-
+function setCode() {
+    var keyBtn = document.querySelector('.changeCode-btn i')
+    keyBtn.onclick = function () {
+        var loveCode = prompt('Enter the code, if do not know, just skip :D')
+        if (loveCode) {
+            localStorage.setItem('loveCode', loveCode)
+            window.location.reload(true);
+        }
+    }
+}
