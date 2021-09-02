@@ -1,5 +1,3 @@
-window.onload = start()
-
 var aTags = document.querySelectorAll('nav a')
 var nav = document.querySelector('.main-navbar')
 var header = document.querySelector('header')
@@ -7,6 +5,7 @@ var dropdown_container = document.querySelector('.dropdown-item')
 var dropdown_items = document.querySelectorAll('.dropdown-item a')
 var gamingBtn = document.querySelector('.gamingBtn')
 
+window.onload = start()
 
 function resolveAfter1Seconds() {
     return new Promise(resolve => {
@@ -15,6 +14,15 @@ function resolveAfter1Seconds() {
         }, 1000);
     });
 }
+
+function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('resolved');
+        }, 2500);
+    });
+}
+
 
 window.addEventListener('scroll', function () {
     nav.classList.toggle('sticky', window.scrollY > 0)
@@ -48,6 +56,7 @@ function start() {
     showTime();
     showLoveMessage()
 }
+
 
 function changeActiveBtns() {
     var changeFontSizeBtns = document.querySelectorAll('.nav-link')
@@ -228,13 +237,6 @@ function changeMainColor() {
     }
 }
 
-function resolveAfter2Seconds() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve('resolved');
-        }, 2500);
-    });
-}
 
 
 var i = 0;
@@ -274,12 +276,24 @@ function showFinalMessage() {
     }
 }
 
+function setCode() {
+    var keyBtn = document.querySelector('.changeCode-btn i')
+    keyBtn.onclick = function () {
+        var loveCode = prompt('Enter the code, if do not know, just skip :D')
+        if (loveCode) {
+            localStorage.setItem('loveCode', loveCode)
+            window.location.reload(true);
+        }
+    }
+}
+
 function showLoveMessage() {
     var confirmCode = localStorage.getItem('loveCode')
-    console.log(confirmCode);
     var letter_icons = document.querySelectorAll('.letter-icon')
     var closeBtn = document.querySelectorAll('.close-love-modal')
     if (confirmCode === 'iloveu') {
+        document.querySelector('.changeCode-btn i').style.display = 'none'
+
         for (var i = 0; i < letter_icons.length; i++) {
             letter_icons[i].onclick = function () {
                 this.parentElement.parentElement.querySelector('.love-modal').style.display = 'block'
@@ -302,15 +316,4 @@ function showLoveMessage() {
         }
     }
 
-}
-
-function setCode() {
-    var keyBtn = document.querySelector('.changeCode-btn i')
-    keyBtn.onclick = function () {
-        var loveCode = prompt('Enter the code, if do not know, just skip :D')
-        if (loveCode) {
-            localStorage.setItem('loveCode', loveCode)
-            window.location.reload(true);
-        }
-    }
 }
