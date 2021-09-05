@@ -20,7 +20,19 @@
 </head>
 
 <body class="w3-animate-opacity ">
-    <!-- <iframe src="/audio/mySong.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
+    <!-- MUSIC -->
+    <div class="music-modal">
+        <!-- The Close Button -->
+        <span class="close-music-modal">&times;</span>
+
+        <div class="music-modal-content">
+            <h2 class="music-modal-title">Let's play a song, shall we :)) ?</h2>
+            <audio controls>
+                <source src="/audio/mySong.mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
 
     <!-- HEADER -->
     <div class="header-container">
@@ -63,7 +75,7 @@
 
     <!-- CHANGE COLOR -->
     <span href="" id="lm_demo_panel_switcher" class="lm-demo-panel-switcher left"><i class="fas fa-cog"></i></span>
-
+    
     <div class="lm-demo-panel left " id="lm_demo_panel">
         <div class="demo-panel-title">Main Color</div>
         <option class="colorElements" value="#ff8578" style="background-color: #ff8578;"></option>
@@ -167,18 +179,31 @@
                 <div class="vertical-line"></div>
 
 
-
-
                 <!-- The Modal -->
                 <div class="love-modal">
                     <!-- The Close Button -->
                     <span class="close-love-modal">&times;</span>
 
-                    <div class="love-modal-content">
+                    <div class="love-modal-content gradient-border">
+                        <p>~~ Lần đầu được gặp vào hôm sinh nhật em, thoạt nhìn thì anh thấy bất ngờ và tự hỏi "Sao
+                            con bé này nó tăng động với giọng nó chóe chóe hơn trong game nhỉ?" và ròi bản tính nhát gái
+                            của anh xồ ra làm anh chỉ dám đứng ngắm ngắm, mãi về sau mới chạy ra đưa quà ròi tranh thủ
+                            nhéo má 1 cái ~~ ..má em mềm vs núng nính hơn anh tưởng đó.</p>
+                        <p>Ròi ta đi ăn bún, lúc ăn thì cũng 1 phần do em tăng động nên anh khá sợ và phần còn lại là do
+                            NHÁT GÁI nên chỉ dám vừa ăn vừa ngó ngó ròi cười cười thoi, nhma nhìn em xinh thiệt @@</p>
+                        <p>Ăn xong ròi thì đi tà tưa, lúc đứng gọi thì anh tranh thủ nhéo má cái :))) các anh chị trông
+                            quầy nhìn mà khiến em ngại chét ~~ nhma kệ, vì sự nghiệp nhéo má thì làm zì cũng làm. Lúc
+                            ngồi uống tà tữa và chơi among thì là lúc anh được gần gũi với em nhất thì thoi, ai ròi cũng
+                            phải bóp má thoi hế hế ~~ và điều khiến anh bất ngờ là em ngồi yên để anh bẹo má :3 anh
+                            thích nắm, với cả tóc em thơm nè, má có mùi bạc hà, thêm mấy cái chấm đen đen lấp lánh ở mắt
+                            iem
+                            làm anh sợ nếu bẹo ròi đưa tay lên mặt liệu mấy cái chấm chấm đó lọt zô mắt có bi mù khôm
+                            :33</p>
+                        <p>Tổng kết lại ngày hôm đó thì anh thấy rất zuiiii vì được gặp em, và cái má của em bánh cuốn
+                            khiến anh trốn học 30ph và cả lớp phải ngồi chờ :33</p>
                     </div>
                 </div>
             </div>
-
 
 
 
@@ -210,7 +235,7 @@
                     <!-- The Close Button -->
                     <span class="close-love-modal">&times;</span>
 
-                    <div class="love-modal-content">
+                    <div class="love-modal-content gradient-border">
                     </div>
                 </div>
             </div>
@@ -245,7 +270,7 @@
                     <!-- The Close Button -->
                     <span class="close-love-modal">&times;</span>
 
-                    <div class="love-modal-content">
+                    <div class="love-modal-content gradient-border">
                     </div>
                 </div>
             </div>
@@ -279,7 +304,7 @@
                     <!-- The Close Button -->
                     <span class="close-love-modal">&times;</span>
 
-                    <div class="love-modal-content">
+                    <div class="love-modal-content gradient-border">
                     </div>
                 </div>
             </div>
@@ -415,7 +440,7 @@
                     </div>
 
                     <div class="col-sm-6 col-md-4 gallery-item">
-                        <!-- <img src="./img/.jpg" class="myImg" alt=""> -->
+                        <img src="./img/around.jpg" class="myImg" alt="">
                     </div>
 
                     <div class="col-sm-6 col-md-4 gallery-item">
@@ -423,7 +448,7 @@
                     </div>
 
                     <div class="col-sm-6 col-md-4 gallery-item">
-                        <!-- <img src="./img/.jpg" class="myImg" alt=""> -->
+                        <img src="./img/surround.jpg" class="myImg" alt="">
                     </div>
 
                     <div class="col-sm-6 col-md-4 gallery-item">
@@ -485,6 +510,7 @@
 
 
         </div>
+
 
 
 

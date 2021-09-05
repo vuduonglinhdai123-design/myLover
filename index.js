@@ -7,6 +7,30 @@ var gamingBtn = document.querySelector('.gamingBtn')
 
 window.onload = start()
 
+// Play Song
+setTimeout(function () {
+    var musicModal = document.querySelector('.music-modal')
+    var closeMusicModal = document.querySelector('.close-music-modal')
+
+    musicModal.style.display = 'block'
+
+    closeMusicModal.onclick = function () {
+        musicModal.style.display = 'none'
+    }
+}, 3000);
+
+
+
+
+function start() {
+    setCode()
+    changeActiveBtns()
+    zooming()
+    changeMainColor()
+    showTime();
+    showLoveMessage()
+}
+
 function resolveAfter1Seconds() {
     return new Promise(resolve => {
         setTimeout(() => {
@@ -48,14 +72,7 @@ document.querySelector('.lm-demo-panel-switcher').onclick = function () {
     document.querySelector('.lm-demo-panel').classList.toggle('active')
 }
 
-function start() {
-    setCode()
-    changeActiveBtns()
-    zooming()
-    changeMainColor()
-    showTime();
-    showLoveMessage()
-}
+
 
 
 function changeActiveBtns() {
@@ -293,7 +310,6 @@ function showLoveMessage() {
     var closeBtn = document.querySelectorAll('.close-love-modal')
     if (confirmCode === 'iloveu') {
         document.querySelector('.changeCode-btn i').style.display = 'none'
-
         for (var i = 0; i < letter_icons.length; i++) {
             letter_icons[i].onclick = function () {
                 this.parentElement.parentElement.querySelector('.love-modal').style.display = 'block'
