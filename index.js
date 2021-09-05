@@ -13,12 +13,15 @@ setTimeout(function () {
     var closeMusicModal = document.querySelector('.close-music-modal')
 
     musicModal.style.display = 'block'
+    document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
+    document.querySelector('html').style.height = "100%"; // ADD THIS LINE
 
     closeMusicModal.onclick = function () {
         musicModal.style.display = 'none'
+        document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+        document.querySelector('html').style.height = "auto"; // ADD THIS LINE
     }
-}, 3000);
-
+}, 3000); 
 
 
 
