@@ -21,7 +21,7 @@ setTimeout(function () {
         document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
         document.querySelector('html').style.height = "auto"; // ADD THIS LINE
     }
-}, 3000); 
+}, 3000);
 
 
 
@@ -250,8 +250,6 @@ function changeMainColor() {
 
             localStorage.setItem('heartColor', heartImgUrl)
             localStorage.setItem('mainColor', this.value)
-
-
             window.location.reload(true);
         }
     }
