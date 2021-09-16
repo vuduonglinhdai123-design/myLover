@@ -2,7 +2,7 @@ var aTags = document.querySelectorAll('nav a')
 var nav = document.querySelector('.main-navbar')
 var header = document.querySelector('header')
 var dropdown_container = document.querySelector('.dropdown-item')
-var dropdown_items = document.querySelectorgitAll('.dropdown-item a')
+var dropdown_items = document.querySelectorAll('.dropdown-item a')
 var gamingBtn = document.querySelector('.gamingBtn')
 
 window.onload = start()
