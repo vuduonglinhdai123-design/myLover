@@ -865,6 +865,7 @@ span.lm-demo-panel-switcher i {
     height: 500px;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 100px;
 }
 
 .philo-container img {
