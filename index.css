@@ -16,10 +16,10 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     overflow-y: hidden;
+    width: 100%;
 }
 
-h1,
-h2 {
+h1, h2 {
     font-family: 'Courgette', Helvetica, sans-serif;
 }
 
@@ -90,8 +90,7 @@ a:hover {
     transition: 0.3s;
 }
 
-.close-music-modal:hover,
-.close-music-modal:focus {
+.close-music-modal:hover, .close-music-modal:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
@@ -114,7 +113,6 @@ a:hover {
     font-size: 2.6rem;
     color: var(--main-color);
 }
-
 
 /* HEADER */
 
@@ -149,7 +147,6 @@ header {
     font-size: 18px;
     font-weight: 600;
 }
-
 
 /* MAIN NAVBAR */
 
@@ -199,8 +196,7 @@ header {
     background: none;
 }
 
-.dropdown-item.active,
-.dropdown-item:active {
+.dropdown-item.active, .dropdown-item:active {
     background-color: var(--main-color);
     color: darkred;
     width: auto;
@@ -219,8 +215,7 @@ header {
     color: white;
 }
 
-.dropdown-item:focus,
-.dropdown-item:hover {
+.dropdown-item:focus, .dropdown-item:hover {
     color: darkred;
     text-decoration: none;
 }
@@ -434,9 +429,7 @@ header {
     transition: 0.3s;
 }
 
-.story-image,
-.story-image:hover,
-.story-image:focus {
+.story-image, .story-image:hover, .story-image:focus {
     display: block;
     max-width: 320px;
     margin: 0 auto;
@@ -474,8 +467,7 @@ header {
     transform: scale(1);
 }
 
-.scale-image-effect:hover img,
-.scale-image-effect:focus img {
+.scale-image-effect:hover img, .scale-image-effect:focus img {
     -webkit-transform: scale(1.15);
     -moz-transform: scale(1.15);
     -ms-transform: scale(1.15);
@@ -520,8 +512,7 @@ header {
     margin-top: 5px;
 }
 
-.story-row h3,
-.story-row p {
+.story-row h3, .story-row p {
     text-align: left;
     width: 100%;
 }
@@ -571,7 +562,6 @@ header {
     opacity: 0.7;
 }
 
-
 /* The Modal (background) */
 
 .modal {
@@ -600,7 +590,6 @@ header {
     /* align-items: center; */
 }
 
-
 /* Modal Content (Image) */
 
 .modal-content {
@@ -611,7 +600,6 @@ header {
     object-fit: contain;
     background: none;
 }
-
 
 /* The Close Button */
 
@@ -626,8 +614,7 @@ header {
     z-index: 300;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
@@ -658,8 +645,7 @@ header {
     cursor: pointer;
 }
 
-.previous,
-.next {
+.previous, .next {
     border: none;
     transition: 0.3s;
     background: none;
@@ -769,8 +755,7 @@ span.lm-demo-panel-switcher i {
     margin-bottom: 12px;
 }
 
-.lm-demo-panel.left.active,
-.lm-demo-panel.right.active {
+.lm-demo-panel.left.active, .lm-demo-panel.right.active {
     margin-left: 0;
     margin-right: 0;
     opacity: 1;
@@ -790,7 +775,6 @@ span.lm-demo-panel-switcher i {
     padding: 1px;
     cursor: pointer;
 }
-
 
 /* GAMING */
 
@@ -864,7 +848,6 @@ span.lm-demo-panel-switcher i {
     font-weight: 600;
 }
 
-
 /* GALLERY GAMING */
 
 .gallery-gaming {
@@ -877,7 +860,6 @@ span.lm-demo-panel-switcher i {
 .gallery-gaming h2 {
     width: 100%;
 }
-
 
 /*GAME PHILOSOPHY */
 
@@ -964,8 +946,7 @@ span.lm-demo-panel-switcher i {
     box-shadow: none;
 }
 
-.btn-5:before,
-.btn-5:after {
+.btn-5:before, .btn-5:after {
     content: '';
     position: absolute;
     top: 0;
@@ -984,8 +965,7 @@ span.lm-demo-panel-switcher i {
     bottom: 0;
 }
 
-.btn-5:hover:before,
-.btn-5:hover:after {
+.btn-5:hover:before, .btn-5:hover:after {
     width: 100%;
     transition: 800ms ease all;
 }
@@ -1097,8 +1077,7 @@ span.lm-demo-panel-switcher i {
     transition: 0.3s;
 }
 
-.final-close:hover,
-.final-close:focus {
+.final-close:hover, .final-close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
@@ -1147,13 +1126,11 @@ span.lm-demo-panel-switcher i {
     z-index: 300;
 }
 
-.close-love-modal:hover,
-.close-love-modal:focus {
+.close-love-modal:hover, .close-love-modal:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
 }
-
 
 /* FOOTER */
 
@@ -1234,7 +1211,6 @@ footer {
         transform: translateY(-15px);
     }
 }
-
 
 /* 100% Image Width on Smaller Screens */
 
