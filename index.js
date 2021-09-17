@@ -2,26 +2,32 @@ var aTags = document.querySelectorAll('nav a')
 var nav = document.querySelector('.main-navbar')
 var header = document.querySelector('header')
 var dropdown_container = document.querySelector('.dropdown-item')
-var dropdown_items = document.querySelectorgitAll('.dropdown-item a')
+var dropdown_items = document.querySelectorAll('.dropdown-item a')
 var gamingBtn = document.querySelector('.gamingBtn')
 
 window.onload = start()
 
 // Play Song
-setTimeout(function() {
-    var musicModal = document.querySelector('.music-modal')
-    var closeMusicModal = document.querySelector('.close-music-modal')
+// setTimeout(function () {
+//     var musicModal = document.querySelector('.music-modal')
+//     var closeMusicModal = document.querySelector('.close-music-modal')
+//     var audio = document.querySelector('audio')
+//     audio.onplay = function () {
+//         musicModal.style.display = 'none'
+//         document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+//         document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+//     }
 
-    musicModal.style.display = 'block'
-    document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
-    document.querySelector('html').style.height = "100%"; // ADD THIS LINE
+//     musicModal.style.display = 'block'
+//     document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
+//     document.querySelector('html').style.height = "100%"; // ADD THIS LINE
 
-    closeMusicModal.onclick = function() {
-        musicModal.style.display = 'none'
-        document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
-        document.querySelector('html').style.height = "auto"; // ADD THIS LINE
-    }
-}, 3000);
+//     closeMusicModal.onclick = function () {
+//         musicModal.style.display = 'none'
+//         document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+//         document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+//     }
+// }, 3000);
 
 
 
@@ -51,27 +57,27 @@ function resolveAfter2Seconds() {
 }
 
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     nav.classList.toggle('sticky', window.scrollY > 0)
     header.classList.toggle('sticky-header', window.scrollY > 0)
     dropdown_container.classList.toggle('active', window.scrollY > 0)
 })
 
 for (var j = 0; j < aTags.length; j++) {
-    aTags[j].onclick = function(e) {
+    aTags[j].onclick = function (e) {
         // e.stopPropagation()
     }
 }
 
-document.querySelector('.lm-demo-panel-switcher').onmouseover = function() {
+document.querySelector('.lm-demo-panel-switcher').onmouseover = function () {
     this.querySelector('i').classList.toggle('loading')
 }
 
-document.querySelector('.lm-demo-panel-switcher').onmouseout = function() {
+document.querySelector('.lm-demo-panel-switcher').onmouseout = function () {
     this.querySelector('i').classList.remove('loading')
 }
 
-document.querySelector('.lm-demo-panel-switcher').onclick = function() {
+document.querySelector('.lm-demo-panel-switcher').onclick = function () {
     document.querySelector('.lm-demo-panel').classList.toggle('active')
 }
 
@@ -81,7 +87,7 @@ document.querySelector('.lm-demo-panel-switcher').onclick = function() {
 function changeActiveBtns() {
     var changeFontSizeBtns = document.querySelectorAll('.nav-link')
     for (var i = 0; i < changeFontSizeBtns.length; i++) {
-        changeFontSizeBtns[i].addEventListener("click", function() {
+        changeFontSizeBtns[i].addEventListener("click", function () {
             var current = document.getElementsByClassName("active");
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
@@ -91,7 +97,7 @@ function changeActiveBtns() {
 
 // Another changeActiveBtns for dropdown nav-links
 var dropdown_navLinks = document.querySelectorAll('.dropdown-nav-link')
-dropdown_container.onclick = function(e) {
+dropdown_container.onclick = function (e) {
     for (var j = 0; j < dropdown_navLinks.length; j++) {
         if (e.target === dropdown_navLinks[j]) {
             var current = document.getElementsByClassName("active");
@@ -160,7 +166,7 @@ function zooming() {
 
     for (var i = 0; i < img.length; i++) {
         img[i].setAttribute('id', `${i + 1}`)
-        img[i].onclick = function() {
+        img[i].onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
             document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
@@ -179,13 +185,13 @@ function zooming() {
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
         document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
         document.querySelector('html').style.height = "auto"; // ADD THIS LINE
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
             document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
@@ -203,7 +209,7 @@ function slideShow(id) {
     var img = document.querySelectorAll(".myImg");
 
 
-    previousBtn.onclick = function() {
+    previousBtn.onclick = function () {
         imageId -= 1
         if (imageId < 1) {
             imageId = 1
@@ -216,7 +222,7 @@ function slideShow(id) {
 
     }
 
-    nextBtn.onclick = function() {
+    nextBtn.onclick = function () {
         imageId += 1
         if (imageId > img.length) {
             imageId = img.length
@@ -227,8 +233,6 @@ function slideShow(id) {
             modalImg.src = nextImage;
         }
     }
-
-
 }
 
 function changeMainColor() {
@@ -243,7 +247,7 @@ function changeMainColor() {
     }
 
     for (var i = 0; i < colorElements.length; i++) {
-        colorElements[i].onclick = function() {
+        colorElements[i].onclick = function () {
             var heartImgUrl = this.value.substring(1) + '.png'
 
             localStorage.setItem('heartColor', heartImgUrl)
@@ -268,7 +272,7 @@ async function typeWriter() {
     await resolveAfter2Seconds();
     document.querySelector('.click-message-container').style.display = 'flex'
     await resolveAfter1Seconds()
-    document.querySelector('.final-heart').style.display = 'block'
+    document.querySelector('.final-heart-container').style.display = 'block'
     showFinalMessage()
 }
 
@@ -276,7 +280,7 @@ function showFinalMessage() {
     var finalHeart = document.querySelector('.final-heart')
     var modal = document.querySelector(".final-modal");
 
-    finalHeart.onclick = function() {
+    finalHeart.onclick = function () {
         modal.style.display = "block";
         document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
         document.querySelector('html').style.height = "100%"; // ADD THIS LINE
@@ -285,7 +289,7 @@ function showFinalMessage() {
     var span = document.getElementsByClassName("final-close")[0];
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
         document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
         document.querySelector('html').style.height = "auto"; // ADD THIS LINE
@@ -294,7 +298,7 @@ function showFinalMessage() {
 
 function setCode() {
     var keyBtn = document.querySelector('.changeCode-btn i')
-    keyBtn.onclick = function() {
+    keyBtn.onclick = function () {
         var loveCode = prompt('Enter the code, if do not know, just skip :D')
         if (loveCode) {
             localStorage.setItem('loveCode', loveCode)
@@ -310,7 +314,7 @@ function showLoveMessage() {
     if (confirmCode === 'iloveu') {
         document.querySelector('.changeCode-btn i').style.display = 'none'
         for (var i = 0; i < letter_icons.length; i++) {
-            letter_icons[i].onclick = function() {
+            letter_icons[i].onclick = function () {
                 this.parentElement.parentElement.querySelector('.love-modal').style.display = 'block'
                 document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
                 document.querySelector('html').style.height = "100%"; // ADD THIS LINE
@@ -318,7 +322,7 @@ function showLoveMessage() {
         }
 
         for (var j = 0; j < closeBtn.length; j++) {
-            closeBtn[j].onclick = function() {
+            closeBtn[j].onclick = function () {
                 this.parentElement.style.display = 'none'
                 document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
                 document.querySelector('html').style.height = "auto"; // ADD THIS LINE
@@ -329,5 +333,21 @@ function showLoveMessage() {
             letter_icons[i].onclick = ''
         }
     }
-
 }
+
+const footer = document.querySelector("footer");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "fas fa-heart rain-heart";
+    heart.style.left = (Math.random() * 100) + "vw";
+    heart.style.animationDuration = (Math.random() * 3) + 2 + "s"
+    footer.appendChild(heart);
+}
+setInterval(createHeart, 100);
+setInterval(function name(params) {
+    var heartArr = document.querySelectorAll(".rain-heart")
+    if (heartArr.length > 200) {
+        heartArr[0].remove()
+    }
+}, 100)
