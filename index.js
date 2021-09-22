@@ -9,28 +9,28 @@ window.onload = start()
 
 
 // Play Song
-if (localStorage.getItem('loveCode') === 'iloveu') {
-    setTimeout(function () {
-        var musicModal = document.querySelector('.music-modal')
-        var closeMusicModal = document.querySelector('.close-music-modal')
-        var audio = document.querySelector('audio')
-        audio.onplay = function () {
-            musicModal.style.display = 'none'
-            document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
-            document.querySelector('html').style.height = "auto"; // ADD THIS LINE
-        }
+// if (localStorage.getItem('loveCode') === 'iloveu') {
+//     setTimeout(function () {
+//         var musicModal = document.querySelector('.music-modal')
+//         var closeMusicModal = document.querySelector('.close-music-modal')
+//         var audio = document.querySelector('audio')
+//         audio.onplay = function () {
+//             musicModal.style.display = 'none'
+//             document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+//             document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+//         }
 
-        musicModal.style.display = 'block'
-        document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
-        document.querySelector('html').style.height = "100%"; // ADD THIS LINE
+//         musicModal.style.display = 'block'
+//         document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
+//         document.querySelector('html').style.height = "100%"; // ADD THIS LINE
 
-        closeMusicModal.onclick = function () {
-            musicModal.style.display = 'none'
-            document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
-            document.querySelector('html').style.height = "auto"; // ADD THIS LINE
-        }
-    }, 3000);
-}
+//         closeMusicModal.onclick = function () {
+//             musicModal.style.display = 'none'
+//             document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+//             document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+//         }
+//     }, 3000);
+// }
 
 
 
@@ -283,19 +283,21 @@ function showFinalMessage() {
     var finalHeart = document.querySelector('.final-heart')
     var modal = document.querySelector(".final-modal");
 
-    finalHeart.onclick = function () {
-        modal.style.display = "block";
-        document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
-        document.querySelector('html').style.height = "100%"; // ADD THIS LINE
-    }
+    if (localStorage.getItem('loveCode') === 'iloveu') {
+        finalHeart.onclick = function () {
+            modal.style.display = "block";
+            document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
+            document.querySelector('html').style.height = "100%"; // ADD THIS LINE
+        }
 
-    var span = document.getElementsByClassName("final-close")[0];
+        var span = document.getElementsByClassName("final-close")[0];
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-        document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
-        document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+            document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+        }
     }
 }
 

@@ -549,13 +549,17 @@ header {
     width: 100%;
     border: 0;
     height: 300px;
-    object-fit: cover;
 }
 
 .myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    object-fit: cover;
+}
+
+.myImg:nth-child(5) {
+    object-fit: contain;
 }
 
 .myImg:hover {
