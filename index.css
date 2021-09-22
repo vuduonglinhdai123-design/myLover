@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +15,8 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    overflow-y: hidden;
+    width: 100%;
 }
 
 h1, h2 {
@@ -29,7 +32,8 @@ a:hover {
 }
 
 .sticky {
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     background-color: var(--main-color);
     color: darkred;
 }
@@ -396,6 +400,7 @@ header {
     align-items: center;
     border-top: 1px solid #e5e5e5;
     padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .story-row {
@@ -526,7 +531,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 100px 15% 50px;
     border-top: 1px solid #e5e5e5;
     padding-top: 100px;
 }
@@ -779,7 +783,6 @@ span.lm-demo-panel-switcher i {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 100px 15% 50px;
     border-top: 1px solid #e5e5e5;
     padding-top: 100px;
 }
@@ -794,6 +797,7 @@ span.lm-demo-panel-switcher i {
     width: 100%;
     position: relative;
     height: 520px;
+    margin-bottom: 100px;
 }
 
 .vl {
@@ -861,10 +865,10 @@ span.lm-demo-panel-switcher i {
 
 .philo-container {
     width: 100%;
-    margin: 100px 15% 50px;
     height: 500px;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 100px;
 }
 
 .philo-container img {
@@ -875,7 +879,7 @@ span.lm-demo-panel-switcher i {
 }
 
 .philo-quote {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .philo-quote p {
@@ -891,7 +895,6 @@ span.lm-demo-panel-switcher i {
 }
 
 #game-gallery {
-    margin: 100px 15% 50px;
     border-top: 1px solid #e5e5e5;
     padding-top: 100px;
 }
@@ -905,7 +908,6 @@ span.lm-demo-panel-switcher i {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    margin: 100px 15% 50px;
     border-top: 1px solid #e5e5e5;
     padding-top: 100px;
 }
@@ -992,12 +994,15 @@ span.lm-demo-panel-switcher i {
     animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
+.final-heart-container {
+    display: none;
+}
+
 .final-heart {
     font-size: 7rem;
     color: var(--main-color);
     cursor: pointer;
     transition: 0.3s;
-    display: none;
     -webkit-animation: fadein 0.5s;
 }
 
@@ -1125,6 +1130,59 @@ span.lm-demo-panel-switcher i {
     cursor: pointer;
 }
 
+/* FOOTER */
+
+footer {
+    position: relative;
+    background: linear-gradient(45deg, pink, violet);
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    min-width: 30%;
+    min-height: 30%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 5px 5px 5px 2px black;
+    border-radius: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 5px 10px;
+    font-family: 'Courgette', Helvetica, sans-serif;
+}
+
+.footer-title {
+    margin-right: 5px;
+}
+
+.rain-heart {
+    color: rgb(60, 0, 60);
+    font-size: 25px;
+    position: absolute;
+    animation: heartMove linear 1;
+    top: 0px;
+    z-index: 0;
+}
+
+@keyframes heartMove {
+    0% {
+        transform: translateY(-10vh);
+    }
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
 @keyframes fadein {
     from {
         opacity: 0;
@@ -1186,25 +1244,3 @@ span.lm-demo-panel-switcher i {
         width: 100%;
     }
 }
-
-/* FOOTER */
-
-.footer-image-block {
-    width: 100%;
-    height: 100vh;
-    background: url(/img/headerImg.jpg) no-repeat;
-}
-
-.footer-title {
-    position: absolute;
-    line-height: 100vh;
-    width: 100%;
-    text-align: center;
-    font-size: 55px;
-    color: white;
-}
-
-/* .main-body .container {
-    border-top: 1px solid #e5e5e5;
-    padding-top: 100px;
-} */

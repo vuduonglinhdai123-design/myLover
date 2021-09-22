@@ -7,21 +7,30 @@ var gamingBtn = document.querySelector('.gamingBtn')
 
 window.onload = start()
 
+
 // Play Song
-// setTimeout(function () {
-//     var musicModal = document.querySelector('.music-modal')
-//     var closeMusicModal = document.querySelector('.close-music-modal')
+if (localStorage.getItem('loveCode') === 'iloveu') {
+    setTimeout(function () {
+        var musicModal = document.querySelector('.music-modal')
+        var closeMusicModal = document.querySelector('.close-music-modal')
+        var audio = document.querySelector('audio')
+        audio.onplay = function () {
+            musicModal.style.display = 'none'
+            document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+            document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+        }
 
-//     musicModal.style.display = 'block'
-//     document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
-//     document.querySelector('html').style.height = "100%"; // ADD THIS LINE
+        musicModal.style.display = 'block'
+        document.querySelector('html').style.overflow = "hidden"; // ADD THIS LINE
+        document.querySelector('html').style.height = "100%"; // ADD THIS LINE
 
-//     closeMusicModal.onclick = function () {
-//         musicModal.style.display = 'none'
-//         document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
-//         document.querySelector('html').style.height = "auto"; // ADD THIS LINE
-//     }
-// }, 3000);
+        closeMusicModal.onclick = function () {
+            musicModal.style.display = 'none'
+            document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
+            document.querySelector('html').style.height = "auto"; // ADD THIS LINE
+        }
+    }, 3000);
+}
 
 
 
@@ -138,7 +147,7 @@ function showTime() {
     var minutes = Math.floor(delta / 60) % 60;
 
     // what's left is seconds
-    var seconds = delta % 60;  // in theory the modulus is not required
+    var seconds = delta % 60; // in theory the modulus is not required
 
     document.querySelector(".days span").innerText = diffInDays;
     document.querySelector(".hours span").innerText = hours;
@@ -189,7 +198,7 @@ function zooming() {
         if (event.target == modal) {
             modal.style.display = "none";
             document.querySelector('html').style.overflow = "auto"; // ADD THIS LINE
-            document.querySelector('html').style.height = "auto";  // ADD THIS LINE
+            document.querySelector('html').style.height = "auto"; // ADD THIS LINE
         }
     }
 
@@ -209,8 +218,7 @@ function slideShow(id) {
             imageId = 1
             var previousImage = document.getElementById(imageId).src
             modalImg.src = previousImage;
-        }
-        else {
+        } else {
             var previousImage = document.getElementById(imageId).src
             modalImg.src = previousImage;
         }
@@ -223,14 +231,11 @@ function slideShow(id) {
             imageId = img.length
             var nextImage = document.getElementById(imageId).src
             modalImg.src = nextImage;
-        }
-        else {
+        } else {
             var nextImage = document.getElementById(imageId).src
             modalImg.src = nextImage;
         }
     }
-
-
 }
 
 function changeMainColor() {
@@ -270,7 +275,7 @@ async function typeWriter() {
     await resolveAfter2Seconds();
     document.querySelector('.click-message-container').style.display = 'flex'
     await resolveAfter1Seconds()
-    document.querySelector('.final-heart').style.display = 'block'
+    document.querySelector('.final-heart-container').style.display = 'block'
     showFinalMessage()
 }
 
@@ -326,11 +331,26 @@ function showLoveMessage() {
                 document.querySelector('html').style.height = "auto"; // ADD THIS LINE
             }
         }
-    }
-    else {
+    } else {
         for (var i = 0; i < letter_icons.length; i++) {
             letter_icons[i].onclick = ''
         }
     }
-
 }
+
+const footer = document.querySelector("footer");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "fas fa-heart rain-heart";
+    heart.style.left = (Math.random() * 100) + "vw";
+    heart.style.animationDuration = (Math.random() * 3) + 2 + "s"
+    footer.appendChild(heart);
+}
+setInterval(createHeart, 100);
+setInterval(function name(params) {
+    var heartArr = document.querySelectorAll(".rain-heart")
+    if (heartArr.length > 200) {
+        heartArr[0].remove()
+    }
+}, 100)
