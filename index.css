@@ -934,12 +934,10 @@ span.lm-demo-panel-switcher i {
     padding: 0;
     border: none;
     background-color: var(--main-color);
-    /* background: rgb(255, 27, 0); */
-    /* background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%); */
 }
 
 .btn-5:hover {
-    color: #f0094a;
+    color: var(--main-color);
     background: transparent;
     box-shadow: none;
 }
@@ -951,7 +949,7 @@ span.lm-demo-panel-switcher i {
     right: 0;
     height: 2px;
     width: 0;
-    background: #f0094a;
+    background: var(--main-color);
     box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
     transition: 400ms ease all;
 }
