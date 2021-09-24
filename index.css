@@ -521,6 +521,12 @@ header {
     margin: 10px 0px;
 }
 
+.love-title {
+    text-align: end;
+    font-size: 1.8rem;
+    font-family: 'Courgette', Helvetica, sans-serif;
+}
+
 .myMessage {
     font-size: 3rem;
     color: var(--main-color);
