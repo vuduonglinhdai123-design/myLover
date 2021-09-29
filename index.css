@@ -1048,7 +1048,21 @@ span.lm-demo-panel-switcher i {
     max-width: 700px;
     height: 100%;
     object-fit: cover;
+    overflow-y: auto;
+    overflow-x: hidden;
     color: white;
+}
+
+.final-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.final-img img {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 100px;
 }
 
 .gradient-border {
@@ -1064,7 +1078,7 @@ span.lm-demo-panel-switcher i {
 .gradient-border:after {
     content: '';
     position: absolute;
-    top: calc(-1 * var(--borderWidth));
+    top: calc(-1     * var(--borderWidth));
     left: calc(-1 * var(--borderWidth));
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
