@@ -39,7 +39,7 @@ function start() {
     changeActiveBtns()
     zooming()
     changeMainColor()
-    showTime();
+    // showTime();
     showLoveMessage()
 }
 
@@ -111,52 +111,52 @@ dropdown_container.onclick = function (e) {
 }
 
 
-function showTime() {
-    // count Day
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
+// function showTime() {
+//     // count Day
+//     var today = new Date();
+//     var dd = String(today.getDate()).padStart(2, '0');
+//     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+//     var yyyy = today.getFullYear();
+//     today = mm + '/' + dd + '/' + yyyy;
 
-    const date1 = new Date("11/16/2020");
-    const date2 = new Date(today);
+//     const date1 = new Date("11/16/2020");
+//     const date2 = new Date(today);
 
-    // One day in milliseconds
-    const oneDay = 1000 * 60 * 60 * 24;
+//     // One day in milliseconds
+//     const oneDay = 1000 * 60 * 60 * 24;
 
-    // Calculating the time difference between two dates
-    const diffInTime = date2.getTime() - date1.getTime();
+//     // Calculating the time difference between two dates
+//     const diffInTime = date2.getTime() - date1.getTime();
 
-    // Calculating the no. of days between two dates
-    const diffInDays = Math.round(diffInTime / oneDay);
+//     // Calculating the no. of days between two dates
+//     const diffInDays = Math.round(diffInTime / oneDay);
 
 
-    // h m and s
+//     // h m and s
 
-    var date_now = new Date(2020, 11, 16), // month is zero based
-        date_future = new Date;
+//     var date_now = new Date(2020, 11, 16), // month is zero based
+//         date_future = new Date;
 
-    // get total seconds between the times
-    var delta = Math.abs(date_future - date_now) / 1000;
+//     // get total seconds between the times
+//     var delta = Math.abs(date_future - date_now) / 1000;
 
-    // calculate (and subtract) whole hours
-    var hours = Math.floor(delta / 3600) % 24;
+//     // calculate (and subtract) whole hours
+//     var hours = Math.floor(delta / 3600) % 24;
 
-    // calculate (and subtract) whole minutes
-    var minutes = Math.floor(delta / 60) % 60;
+//     // calculate (and subtract) whole minutes
+//     var minutes = Math.floor(delta / 60) % 60;
 
-    // what's left is seconds
-    var seconds = delta % 60; // in theory the modulus is not required
+//     // what's left is seconds
+//     var seconds = delta % 60; // in theory the modulus is not required
 
-    document.querySelector(".days span").innerText = diffInDays;
-    document.querySelector(".hours span").innerText = hours;
-    document.querySelector(".minutes span").textContent = minutes;
-    document.querySelector(".seconds span").textContent = Math.floor(seconds);
+//     document.querySelector(".days span").innerText = diffInDays;
+//     document.querySelector(".hours span").innerText = hours;
+//     document.querySelector(".minutes span").textContent = minutes;
+//     document.querySelector(".seconds span").textContent = Math.floor(seconds);
 
-    setTimeout(showTime, 1000);
+//     setTimeout(showTime, 1000);
 
-}
+// }
 
 function zooming() {
     // Get the modal
