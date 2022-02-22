@@ -7,7 +7,7 @@ var gamingBtn = document.querySelector('.gamingBtn')
 
 window.onload = start()
 
-
+// 
 // Play Song
 if (localStorage.getItem('loveCode') === 'iloveu') {
     setTimeout(function () {
