@@ -338,7 +338,7 @@ header {
     height: 100px;
     width: 100px;
     margin-top: -250px;
-    animation: beat .5s infinite alternate;
+    /* animation: beat .5s infinite alternate; */
     transform-origin: center;
 }
 
